@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios del DOM</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lexend+Mega&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-dark>
+    <header class="header">
+        <h1 class="header__h1">Ejercicios del DOM</h1>
+    </header>
+
+    <div id="networkStatus" class="networkStatus ">
+        <!-- <p>No Connetion</p> -->
+        <!-- <p>Back Online</p> -->
+    </div>
+
+    <div class="content__nav">
+        <nav id="nav" class="nav nav-left">
+            <ul class="nav__ul">
+                <li class="nav__li"><a class="nav__a" href="#section1" data-scroll-spy>Reloj Digital y Alarma Sonora</a>
+                </li>
+                <li class="nav__li"><a class="nav__a" href="#section2" data-scroll-spy>Eventos del Teclado</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section3" data-scroll-spy>Countdown</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section4" data-scroll-spy>Responsive JS</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section5" data-scroll-spy>Responsive Tester</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section6" data-scroll-spy>User Agent</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section7" data-scroll-spy>WebCam</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section8" data-scroll-spy>Geolocation</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section9" data-scroll-spy>Filtros de Busquedas</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section10" data-scroll-spy>Random</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section11" data-scroll-spy>Responsive Slider</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section12" data-scroll-spy>Smart video</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section13" data-scroll-spy>Formulario Validaciones</a></li>
+                <li class="nav__li"><a class="nav__a" href="#section14" data-scroll-spy>Narrador</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Buttons static -->
+    <button id="nav__button" class="button-static button-burger"><i class="fas fa-bars"></i></button>
+
+    <a id="button-scroll" class="button-static button-scroll hidden"><i class="fas fa-arrow-up"></i></a>
+
+    <a class="button-static button-dark"><i class="fas fa-moon"></i></a> <!-- fa-sun fa-moon -->
+
+    <main class="main">
+        <section id="section1" class="section" data-scroll-spy>
+            <h2 class="section__h2">Reloj Digital y Alarma Sonora</h2>
+            <span id="reloj" class="reloj"></span>
+            <div class="section__div-reloj">
+                <button id="btn-activar-reloj" class="btn-blue">Iniciar Reloj</button>
+                <button id="btn-desactivar-reloj" class="btn-blue">Detener Reloj</button>
+                <button id="btn-activar-alarma" class="btn-blue">Iniciar Alarma</button>
+                <button id="btn-desactivar-alarma" class="btn-blue">Detener Alarma</button>
+            </div>
+        </section>
+
+        <section id="section2" class="section" data-scroll-spy>
+            <h2 class="section__h2">Eventos del Teclado</h2>
+            <div class="section__area">
+                <div id="circle" class="section__area-circle"></div>
+            </div>
+        </section>
+
+        <section id="section3" class="section" data-scroll-spy>
+            <h2 class="section__h2">Countdown</h2>
+            <div class="countdown">
+                <span id="countdown__dias" class="countdown__span">00</span>
+                <p class="countdown__puntos">:</p>
+                <span id="countdown__horas" class="countdown__span">00</span>
+                <p class="countdown__puntos">:</p>
+                <span id="countdown__minutos" class="countdown__span">00</span>
+                <p class="countdown__puntos">:</p>
+                <span id="countdown__segundos" class="countdown__span">00</span>
+                <p class="countdown__p">Dias</p>
+                <P></P>
+                <p class="countdown__p">Horas</p>
+                <P></P>
+                <p class="countdown__p">Minutos</p>
+                <P></P>
+                <p class="countdown__p">Segundos</p>
+            </div>
+        </section>
+
+        <section id="section4" class="section" data-scroll-spy>
+            <h2 class="section__h2">Responsive JS</h2>
+            <div id="responsive-js" class="responsive-js">
+            </div>
+        </section>
+
+        <section id="section5" class="section" data-scroll-spy>
+            <h2 class="section__h2">Responsive Tester</h2>
+            <form id="form" class="form">
+                <input class="input" name="url" type="url" placeholder="URL" required>
+                <input class="input" name="width" type="text" placeholder="Width" required>
+                <input class="input" name="height" type="text" placeholder="Height" required>
+                <div>
+                    <input class="btn-blue form__button" type="submit" value="Probar">
+                    <button name="close" class="btn-blue form__button disabled" disabled="false">Cerrar</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="section6" class="section" data-scroll-spy>
+            <h2 class="section__h2">Detección de Dispositivos User Agent</h2>
+            <!-- Navegador, SO,  -->
+            <div id="user-agent" class="responsive-js">
+                <ul>
+                    <li>Navegador --> Netscape</li>
+                    <li>Version del Navegador --> 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+                        Gecko) Chrome/89.0.4389.82 Safari/537.36</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section id="section7" class="section" data-scroll-spy>
+            <h2 class="section__h2">Detección de la camara web</h2>
+            <div>
+                <video id="webcam" class="webcam__video"></video>
+            </div>
+        </section>
+
+        <section id="section8" class="section" data-scroll-spy>
+            <h2 class="section__h2">Geolocation</h2>
+            <div id="geolocation"></div>
+        </section>
+
+        <section id="section9" class="section" data-scroll-spy>
+            <h2 class="section__h2">Filtros de Busquedas</h2>
+            <input id="figures-input" class="input figures__input" type="text" placeholder="Search">
+            <div class="figures">
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/nature" alt="">
+                    <figcaption>nature</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/any" alt="">
+                    <figcaption>any</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/tech" alt="">
+                    <figcaption>tech</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/animals" alt="">
+                    <figcaption>animals</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/people" alt="">
+                    <figcaption>people</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/180/200/arch" alt="">
+                    <figcaption>arch</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="section10" class="section" data-scroll-spy>
+            <h2 class="section__h2">Random</h2>
+            <div class="random">
+                <ul class="random__ul">
+                    <li class="random__li">1</li>
+                    <li class="random__li">2</li>
+                    <li class="random__li">3</li>
+                    <li class="random__li">4</li>
+                    <li class="random__li">5</li>
+                    <li class="random__li">6</li>
+                    <li class="random__li">7</li>
+                    <li class="random__li">8</li>
+                    <li class="random__li">9</li>
+                    <li class="random__li">10</li>
+                </ul>
+                <br>
+                <button id="random__get" class="btn-blue">Obtener Random</button>
+                <button id="random__delete" class="btn-blue">Delete Random</button>
+            </div>
+        </section>
+
+        <section id="section11" class="section" data-scroll-spy>
+            <h2 class="section__h2">Responsive Slider</h2>
+            <div class="slider">
+                <article class="slider__article">
+                    <img class="slider__img" src="Assets/pexels-garry-mordor-1115931.jpg" alt="Bosque">
+                </article>
+                <article class="slider__article hidden">
+                    <img class="slider__img" src="Assets/pexels-mohamed-almari-1485894.jpg" alt="Puente">
+                </article>
+                <article class="slider__article hidden">
+                    <img class="slider__img" src="Assets/pexels-vlad-alexandru-popa-1402787.jpg" alt="Carro">
+                </article>
+                <article class="slider__article hidden">
+                    <p class="slider__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae officiis
+                        molestiae saepe
+                        accusamus praesentium est odit quibusdam veniam minima, nostrum ea aliquam voluptate quas, ex,
+                        consectetur porro labore iste error!</p>
+                </article>
+                <button class="slider__left"><i class="fas fa-chevron-left"></i><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="slider__rigth"><i class="fas fa-chevron-right"></i><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="section12" class="section" data-scroll-spy>
+            <h2 class="section__h2">Smart Video</h2>
+            <div class="smart">
+                <video id="smart__iframe" class="smart__iframe" src="Assets/Pedro Fernández - Arránquense Muchachos.mp4"
+                    controls muted loop></video>
+            </div>
+        </section>
+
+        <section id="section13" class="section" data-scroll-spy>
+            <h2 class="section__h2">Formulario de Contacto</h2>
+
+            <form class="contact" action="https://formsubmit.co/hernandezdany41@gmail.com" method="POST"
+                target="_blank">
+                <legend class="section__h2"><b>Envianos tus comentarios</b></legend>
+
+                <input class="input contact__input" type="text" name="name" placeholder="Escribe tu nombre"
+                    title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    required>
+                <!-- <label class="contact-error none" for="name">Escribe tu nombre</label> -->
+
+                <input class="input contact__input" type="emial" name="email" placeholder="Escribe tu email"
+                    title="Email correct" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                    required>
+                <!-- <label class="contact-error none" for="email">Escribe tu email</label> -->
+
+                <input class="input contact__input" type="text" name="asunto" placeholder="Asunto a tratar"
+                    title="El asunto es requerido" required>
+                <!-- <label class="contact-error none" for="asunto">Escribe el asunto</label> -->
+
+                <textarea class="input contact__input" name="coments" cols="50" rows="5"
+                    placeholder="Escribe tus comentarios" title="Tu comentario no debe exceder los 255 caracteres"
+                    data-pattern="^.{1,255}$" required></textarea>
+                <!-- <label class="contact-error none" for="comentarios">Escribe tus comentarios</label> -->
+
+                <input class="btn-blue contact__submit" type="submit">
+
+                <div class="contact-form-loader none">
+                    <img src="./Assets/oval.svg" alt="load">
+                </div>
+                <div class="contact-form-response none">
+                    <p>Los datos han sido enviados.</p>
+                </div>
+            </form>
+        </section>
+
+        <section id="section14" class="section" data-scroll-spy>
+            <h2 class="section__h2">Narrador (Lector de Voz)</h2>
+            <div class="speech">
+                <div>
+                    <button id="speech__button-play" class="btn-blue speech__button"><i class="fas fa-play"></i></button>
+                    <!--Play && Pause <i class="fas fa-pause"></i>-->
+                    <button id="speech__button-resume" class="btn-blue speech__button"><i class="fas fa-redo-alt"></i></button>
+                    <!--Resume-->
+                    <button id="speech__button-cancel" class="btn-blue speech__button"><i class="fas fa-trash-alt"></i></button>
+                    <!--Cancel-->
+                </div>
+
+                <div class="speech__div">
+                    <select class="input speech__div-languages" name="select" id="speech__languages">
+                        <option value="--- Elige un idioma ---">--- Choose Language ---</option>
+                    </select>
+
+                    <select class="input speech__div-velocity" name="select2" id="speech__velocity">
+                        <option value="--- Choose Speech ---">--- Choose Speed ---</option>
+                        <option value="0.5">Slow Speech</option>
+                        <option value="1">Normal Speech</option>
+                        <option value="5">Fast Speech</option>
+                    </select>
+                </div>
+                <textarea class="input" name="" id="speech__textarea" cols="50" rows="10" placeholder="Ingrese un texto para leerlo..."></textarea>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>

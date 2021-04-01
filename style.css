@@ -1,0 +1,735 @@
+@font-face {
+    font-family: "number";
+    src: url("font/Have\ a\ Great\ Day\ Demo.ttf");
+}
+
+:root {
+    --main-yellow: rgb(240, 200, 29);
+    --main-gray: #333;
+    --main-fondo: #eee;
+    --main-white: #fff;
+    --main-font: sans-serif, 'Courier Prime', 'Montserrat', 'Lexend Mega', 'Lato', monospace;
+    --main-font-number: number, sans-serif;
+    --main-size: 16px;
+    --main-max-width: 1200px;
+    --main-margin-top: 0;
+    --main-margin-left: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--main-fondo);
+}
+
+a {
+    /* color: black; */
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.dark {
+    background: #313131;
+    color: #dedede;
+}
+
+.btn-blue {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    /* background: #0094d6; */
+    /* background: transparent;
+    color: var(--main-yellow);
+    outline: 1px solid var(--main-yellow); */
+    color: var(--main-gray);
+    background: var(--main-yellow);
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.btn-blue:hover {
+    cursor: pointer;
+    /* background: #00749c; */
+}
+
+.btn-blue:active {
+    background: transparent;
+    color: var(--main-yellow);
+    outline: 1px solid var(--main-yellow);
+    /* background: #00749c; */
+    /* color: var(--main-gray);
+    background: var(--main-yellow); */
+}
+
+.button-static {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background: var(--main-yellow);
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    /* right: 10px; */
+    bottom: 10px;
+    z-index: 999;
+    font-size: 24px;
+    color: var(--main-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-static:hover {
+    cursor: pointer;
+}
+
+.button-static:active {
+    color: var(--main-yellow);
+    background-color: var(--main-gray);
+}
+
+.hidden {
+    visibility: hidden;
+    /* display: none; */
+    opacity: 0;
+    transition: all .5s ease-in;
+    order: 1;
+}
+
+@media(max-width: 550px) {
+    .btn-blue {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/**
+ * Header
+ *
+ * -------------------------------------------------------------------
+*/
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--main-yellow);
+    z-index: 2;
+}
+
+.header__h1 {
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--main-font);
+    color: var(--main-gray);
+}
+
+/**
+ * Network Status
+ *
+ * -------------------------------------------------------------------
+*/
+.networkStatus {
+    position: fixed;
+    width: 100%;
+    background: rgb(0, 204, 0);
+    /* background: red; */
+    text-align: center;
+}
+
+.offLine {
+    background: red;
+}
+
+/**
+ * Nav
+ *
+ * -------------------------------------------------------------------
+*/
+.nav {
+    width: 100%;
+    position: fixed;
+    background: #222c;
+    transition: all .7s ease;
+    z-index: 998;
+}
+
+.nav-left {
+    transform: translateX(-120vw);
+}
+
+.nav__ul {
+    /* margin-top: 100px; */
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.nav__a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    color: var(--main-yellow);
+    font-family: var(--main-font);
+    font-weight: bold;
+    transition: all .7s ease;
+}
+
+.nav__a:hover {
+    background-color: var(--main-yellow);
+    color: var(--main-gray);
+}
+
+/* .nav__select {} */
+
+@media(min-width: 1200px) {
+    .nav {
+        width: 300px;
+        background: var(--main-yellow);
+    }
+
+    .nav-left {
+        transform: translateX(0vw);
+    }
+
+    .nav__ul {
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .nav__li {
+        width: 100%;
+    }
+
+    .nav__a {
+        display: inline-block;
+        padding-left: 20px;
+        text-align: left;
+        color: var(--main-gray);
+    }
+
+    .nav__a:hover {
+        background: #2224;
+    }
+
+    .nav__select {
+        background: #2224;
+    }
+}
+
+/**
+ * Buttons static
+ *
+ * -------------------------------------------------------------------
+*/
+.button-burger {
+    right: 20px;
+}
+
+.button-scroll {
+    right: 80px;
+}
+
+.button-dark {
+    left: 20px;
+}
+
+@media(min-width: 1200px) {
+    .button-burger {
+        display: none;
+    }
+
+    .button-scroll {
+        right: 20px;
+    }
+
+    .button-dark {
+        background: var(--main-gray);
+        color: var(--main-yellow);
+    }
+}
+
+/**
+ * section
+ *
+ * -------------------------------------------------------------------
+*/
+.main {
+    margin: 0 auto;
+    max-width: var(--main-max-width);
+}
+
+@media(min-width: 1200px) {
+    .main {
+        padding-left: 300px;
+    }
+}
+
+.section {
+    /* background-color: rgb(0, 204, 0); */
+    /* overflow: scroll; */
+    /* margin-top: 10px; */
+    /* margin: 0 auto; */
+    padding: 1em;
+    padding-top: 5rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__h2,
+.section__h3 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+/**
+ * section
+ * Section 1 -- Reloj y alarma digital*
+ * -------------------------------------------------------------------
+*/
+.reloj {
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    transition: all .5s;
+    transition: all 1s;
+}
+
+.section__div-reloj {
+    margin-top: 30px;
+}
+
+.disabled {
+    opacity: .5;
+}
+
+/**
+ * section
+ * Section 2 -- Eventos de teclado
+ * -------------------------------------------------------------------
+*/
+.section__area {
+    width: 90%;
+    height: 40vh;
+    margin: 0 auto;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__area-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--main-yellow);
+}
+
+/**
+ * section
+ * Section 3 -- Countdown
+ * -------------------------------------------------------------------
+*/
+.countdown {
+    max-width: 600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 5% 20% 5% 20% 5% 20%;
+    grid-template-rows: 50px;
+}
+
+.countdown__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown__span {
+    padding-top: 5px;
+    font-family: var(--main-font-number);
+    font-weight: bold;
+    font-size: 3.5em;
+    text-align: center;
+}
+
+
+.countdown__p {
+    font-family: var(--main-font-number);
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.countdown__puntos {
+    font-size: 2.5em;
+    text-align: center;
+    line-height: 50px;
+}
+
+@media(min-width: 700px) {
+    .countdown__span {
+        font-size: 4em;
+    }
+
+    .countdown__p {
+        margin-top: 15px;
+        font-size: 1.5em;
+    }
+}
+
+/**
+ * section
+ * Section 4 -- Responsive JS
+ * -------------------------------------------------------------------
+*/
+.responsive-js {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/**
+ * section
+ * Section 5 -- Responsive Tester
+ * -------------------------------------------------------------------
+*/
+.form {
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: var(--main-gray);
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem;
+    /* padding: 7px; */
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    font-family: var(--main-font);
+    /* background: transparent; */
+    border-bottom: 1px solid var(--main-fondo);
+    color: var(--main-gray);
+}
+
+.input:hover {
+    border-bottom: 1px solid var(--main-white);
+}
+
+.form__button {
+    width: 120px;
+}
+
+@media(max-width: 400px) {
+    .form__button {
+        width: 100%;
+    }
+
+    .form__button:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+/**
+ * section
+ * Section 9 -- Filtros de busquea
+ * -------------------------------------------------------------------
+*/
+.webcam__video{
+    width: 100%;
+}
+
+/**
+ * section
+ * Section 9 -- Filtros de busquea
+ * -------------------------------------------------------------------
+*/
+input[type="text"].figures__input {
+    width: 200px;
+    background: var(--main-gray);
+    color: var(--main-white);
+}
+
+.figures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+figcaption {
+    text-align: center;
+    background: #252525;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: var(--main-font);
+    color: #ddd;
+}
+
+/**
+ * section
+ * Section 10 -- Random
+ * -------------------------------------------------------------------
+*/
+.random {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.random__ul {
+    font-family: var(--main-font);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.random__li {
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px var(--main-gray);
+    background: #ddd;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.select {
+    background: crimson;
+    color: #ddd;
+}
+
+/**
+ * section
+ * Section 10 -- Slider
+ * -------------------------------------------------------------------
+*/
+.slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider__article {
+    position: absolute;
+    height: 60vh;
+    transition: all 1s ease;
+}
+
+.slider__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__p {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: var(--main-font);
+    text-align: center;
+    line-height: 4vh;
+}
+
+.slider__left,
+.slider__rigth {
+    border: none;
+    outline: none;
+    position: absolute;
+    margin-top: calc(30vh - 25px);
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--main-yellow);
+    background-color: transparent;
+    font-size: 25px;
+    font-family: var(--main-font);
+    color: var(--main-yellow);
+    line-height: 25px;
+    letter-spacing: -3px;
+}
+
+.slider__left {
+    left: 20px;
+}
+
+.slider__rigth {
+    right: 20px;
+}
+
+.slider__left:hover,
+.slider__rigth:hover {
+    cursor: pointer;
+}
+
+.slider__left:active,
+.slider__rigth:active {
+    color: var(--main-gray);
+    background: var(--main-yellow);
+}
+
+/**
+ * section
+ * Section 11 -- Smart Video
+ * -------------------------------------------------------------------
+*/
+.smart {
+    width: 100%;
+    height: auto;
+}
+
+.smart__iframe {
+    width: inherit;
+}
+
+/**
+ * section
+ * Section 13 -- Formulario de contacto
+ * -------------------------------------------------------------------
+*/
+.contact {
+    width: 100%;
+    --form-ok: var(--main-gray);
+    --form-error: #f44336;
+}
+
+.contact__submit {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 100px;
+}
+
+.contact-form-loader,
+.contact-form-response {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1rem;
+    font-family: var(--main-font);
+}
+
+.contact [required]:valid {
+    outline: thin solid var(--form-ok);
+}
+
+/* .contact [required]:invalid{
+    outline: thin solid var(--form-error);
+} */
+
+.contact-error {
+    display: block;
+    width: 100%;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    /* outline: 1px solid var(--form-error); */
+    background: var(--form-error);
+    font-family: var(--main-font);
+    font-size: 13px;
+    text-align: center;
+    color: white;
+    transition: all .8s ease;
+}
+
+.contact-error.is-active {
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes show-message {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/**
+ * section
+ * Section 14 -- Narrador
+ * -------------------------------------------------------------------
+*/
+.speech {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.speech__div {
+    width: inherit;
+    display: flex;
+    gap: 1rem;
+}
+
+.speech__button {
+    float: left;
+    height: 0;
+    width: 0;
+    margin: 1rem;
+    padding: 1.3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: transparent;
+    color: var(--main-yellow);
+    border: 1px solid var(--main-yellow);
+}
+
+.speech__button:active {
+    outline: none;
+    transform: scale(1.2);
+}
+
+.speech__div-languages,
+.speech__div-velocity {
+    background: var(--main-yellow);
+    font-weight: bold;
+}
+
+.speech__div-languages {
+    width: 70%;
+}
+
+.speech__div-velocity {
+    width: 30%;
+}
